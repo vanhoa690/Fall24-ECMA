@@ -1,33 +1,28 @@
-let a = 10;
-a = "Xin chao cac ban";
-
-const b = 10;
-// b = 20;
-let c;
-let d = null;
-// console.log(c, d);
-
-// object
-const student = {
-  name: "hoadv",
-  age: 34,
-};
-
 const product = {
-  name: "Iphone 16",
-  price: 1111,
-  inStock: true,
-  1: "dddd",
+  id: 1,
+  name: "Iphone 13",
+  price: 100,
 };
+document.getElementById("list").innerHTML = `
+ <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Name</th>
+            <th scope="col">Price</th>
+            <th scope="col">Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">${product.id}</th>
+            <td>${product.name}</td>
+            <td>${product.price} USD</td>
+            <td>
+              <button class="btn btn-danger">Delete</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
 
-// c1
-product = {
-  name: "ten khac",
-};
-
-// c2
-product.isSale = true;
-
-console.log(product.isSale);
-
-// console.log(product["1"]);
+`;
