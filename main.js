@@ -1,46 +1,33 @@
-const products = [
-  {
-    id: 1,
-    name: "Iphone 13",
-    price: 1111,
-  },
-  {
-    id: 2,
-    name: "Iphone 14",
-    price: 1111,
-  },
-  {
-    id: 3,
-    name: "Iphone 15",
-    price: 1111,
-  },
-];
+let a = 10;
+a = "Xin chao cac ban";
 
-function renderProductRow(product) {
-  return `
-   <tr>
-              <th scope="row">${product.id}</th>
-              <td>${product.name}</td>
-              <td>${product.price} VND</td>
-              <td>
-                <button class="btn btn-danger">Delete</button>
-              </td>
-            </tr>
-  `;
-}
+const b = 10;
+// b = 20;
+let c;
+let d = null;
+// console.log(c, d);
 
-document.getElementById("list").innerHTML = `
-<table class="table">
-        <thead>
-          <tr>
-            <th scope="col">ID</th>
-            <th scope="col">Name</th>
-            <th scope="col">Price</th>
-            <th scope="col">Actions</th>
-          </tr>
-        </thead>
-        <tbody>
-        ${products.map(renderProductRow).join("")}
-        </tbody>
-      </table>
-`;
+// object
+const student = {
+  name: "hoadv",
+  age: 34,
+};
+
+const product = {
+  name: "Iphone 16",
+  price: 1111,
+  inStock: true,
+  1: "dddd",
+};
+
+// c1
+product = {
+  name: "ten khac",
+};
+
+// c2
+product.isSale = true;
+
+console.log(product.isSale);
+
+// console.log(product["1"]);
