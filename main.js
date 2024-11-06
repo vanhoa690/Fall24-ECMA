@@ -11,43 +11,26 @@ function renderProductRow(product) {
   `;
 }
 
-function renderUIProductList(products) {
-  document.getElementById("list").innerHTML = `
-  <table class="table">
-        <thead>
-          <tr>
-            <th scope="col">ID</th>
-            <th scope="col">Name</th>
-            <th scope="col">Price</th>
-            <th scope="col">Actions</th>
-          </tr>
-        </thead>
-        <tbody>
-        ${products.map(renderProductRow).join("")}
-        </tbody>
-      </table>
-`;
-}
-
-function getProductList() {
-  fetch("http://localhost:3000/products")
-    .then((res) => {
-      return res.json();
-    })
-    .then((data) => {
-      renderUIProductList(data);
-    })
-    .catch();
-}
-
-// getProductList();
-
 function getProductListAxios() {
   axios
     .get("http://localhost:3000/products")
     .then((data) => {
       const products = data.data;
-      renderUIProductList(products);
+      document.getElementById("list").innerHTML = `
+      <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Name</th>
+                <th scope="col">Price</th>
+                <th scope="col">Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+            ${products.map(renderProductRow).join("")}
+            </tbody>
+          </table>
+    `;
     })
     .catch();
 }
