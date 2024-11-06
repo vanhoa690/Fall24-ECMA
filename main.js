@@ -44,3 +44,16 @@ document.getElementById("list").innerHTML = `
             </tbody>
           </table>
     `;
+// () => {}
+function getProductFetch() {
+  fetch("http://localhost:3000/products")
+    .then((res) => {
+      return res.json();
+    })
+    .then((data) => {
+      console.log(data);
+    })
+    .catch();
+}
+
+getProductFetch();
