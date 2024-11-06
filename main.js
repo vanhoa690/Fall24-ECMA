@@ -1,3 +1,21 @@
+const products = [
+  {
+    id: 1,
+    name: "Iphone 13",
+    price: 1111,
+  },
+  {
+    id: 2,
+    name: "Iphone 14",
+    price: 1111,
+  },
+  {
+    id: 3,
+    name: "Iphone 15",
+    price: 1111,
+  },
+];
+
 function renderProductRow(product) {
   return `
    <tr>
@@ -11,13 +29,8 @@ function renderProductRow(product) {
   `;
 }
 
-function getProductListAxios() {
-  axios
-    .get("http://localhost:3000/products")
-    .then((data) => {
-      const products = data.data;
-      document.getElementById("list").innerHTML = `
-      <table class="table">
+document.getElementById("list").innerHTML = `
+          <table class="table">
             <thead>
               <tr>
                 <th scope="col">ID</th>
@@ -31,8 +44,3 @@ function getProductListAxios() {
             </tbody>
           </table>
     `;
-    })
-    .catch();
-}
-
-getProductListAxios();
