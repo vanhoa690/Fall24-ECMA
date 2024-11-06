@@ -1,21 +1,3 @@
-const products = [
-  {
-    id: 1,
-    name: "Iphone 13",
-    price: 1111,
-  },
-  {
-    id: 2,
-    name: "Iphone 14",
-    price: 1111,
-  },
-  {
-    id: 3,
-    name: "Iphone 15",
-    price: 1111,
-  },
-];
-
 function renderProductRow(product) {
   return `
    <tr>
@@ -29,8 +11,9 @@ function renderProductRow(product) {
   `;
 }
 
-document.getElementById("list").innerHTML = `
-<table class="table">
+function renderUIProductList(products) {
+  document.getElementById("list").innerHTML = `
+  <table class="table">
         <thead>
           <tr>
             <th scope="col">ID</th>
@@ -44,3 +27,29 @@ document.getElementById("list").innerHTML = `
         </tbody>
       </table>
 `;
+}
+
+function getProductList() {
+  fetch("http://localhost:3000/products")
+    .then((res) => {
+      return res.json();
+    })
+    .then((data) => {
+      renderUIProductList(data);
+    })
+    .catch();
+}
+
+// getProductList();
+
+function getProductListAxios() {
+  axios
+    .get("http://localhost:3000/products")
+    .then((data) => {
+      const products = data.data;
+      renderUIProductList(products);
+    })
+    .catch();
+}
+
+getProductListAxios();
