@@ -5,16 +5,19 @@ function renderProductRow(product) {
               <td>${product.name}</td>
               <td>${product.price} VND</td>
               <td>
-                <button onClick=deleteProduct(${product.id}) class="btn btn-danger">Delete</button>
+                <button class="btn btn-danger">Delete</button>
               </td>
       </tr>
   `;
 }
 
-async function showProductList() {
-  const res = await axios.get("http://localhost:3000/products");
-  const products = res.data;
-  document.getElementById("list").innerHTML = `
+function getProductAxios() {
+  axios
+    .get("http://localhost:3000/products")
+    .then((res) => {
+      console.log(res.data);
+      const products = res.data;
+      document.getElementById("list").innerHTML = `
           <table class="table">
             <thead>
               <tr>
@@ -28,17 +31,9 @@ async function showProductList() {
             ${products.map(renderProductRow).join("")}
             </tbody>
           </table>
-  `;
+    `;
+    })
+    .catch();
 }
 
-showProductList();
-
-async function deleteProduct(id) {
-  if (confirm("Di choi ko?")) {
-    try {
-      await axios.delete(`http://localhost:3000/products/${id}`);
-    } catch (error) {
-      console.log(error);
-    }
-  }
-}
+getProductAxios();
