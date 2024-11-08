@@ -5,7 +5,7 @@ function renderProductRow(product) {
               <td>${product.name}</td>
               <td>${product.price} VND</td>
               <td>
-                <button class="btn btn-danger">Delete</button>
+                <button onClick=deleteProduct(${product.id}) class="btn btn-danger">Delete</button>
               </td>
       </tr>
   `;
@@ -32,3 +32,9 @@ async function showProductList() {
 }
 
 showProductList();
+
+async function deleteProduct(id) {
+  if (confirm("Di choi ko?")) {
+    await axios.delete(`http://localhost:3000/products/${id}`);
+  }
+}
