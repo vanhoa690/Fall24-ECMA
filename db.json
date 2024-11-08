@@ -1,8 +1,13 @@
 {
   "products": [
     {
-      "id": 1,
+      "id": "1dd",
       "name": "Iphone 13",
+      "price": 1111
+    },
+    {
+      "id": 2,
+      "name": "Iphone 14",
       "price": 1111
     }
   ]

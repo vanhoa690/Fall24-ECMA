@@ -11,11 +11,14 @@
   </head>
   <body>
     <div class="container">
-      <h1 class="text-center my-4">ECMA Product List</h1>
-      <a href="/add.html">
-        <button class="btn btn-primary">Add Product</button>
-      </a>
-      <div id="list"></div>
+      <h1 class="text-center my-4">ECMA Product Add</h1>
+      <form>
+        <div class="mb-3">
+          <label for="name" class="form-label">Name</label>
+          <input type="text" class="form-control" id="name" />
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.7.7/axios.min.js"></script>
     <script src="main.js"></script>

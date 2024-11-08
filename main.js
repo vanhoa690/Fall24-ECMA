@@ -35,6 +35,10 @@ showProductList();
 
 async function deleteProduct(id) {
   if (confirm("Di choi ko")) {
-    await axios.delete(`http://localhost:3000/products/${id}`);
+    try {
+      await axios.delete(`http://localhost:3000/products/${id}`);
+    } catch (error) {
+      console.log(error);
+    }
   }
 }
