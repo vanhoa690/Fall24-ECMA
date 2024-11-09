@@ -20,6 +20,7 @@ const products = [
     price: 100,
   },
 ];
+
 function renderProductRow(product) {
   return `
    <tr>
@@ -33,18 +34,29 @@ function renderProductRow(product) {
   `;
 }
 
-document.getElementById("list").innerHTML = `
-<table class="table">
-  <thead>
-    <tr>
-      <th scope="col">ID</th>
-      <th scope="col">Name</th>
-      <th scope="col">Price</th>
-      <th scope="col">Actions</th>
-    </tr>
-  </thead>
-  <tbody>
-    ${products.map(renderProductRow).join("")}
-  </tbody>
-</table>
+// arrow function () => {}
+function getProductFetch() {
+  fetch("http://localhost:3000/products")
+    .then((res) => {
+      return res.json();
+    })
+    .then((data) => {
+      document.getElementById("list").innerHTML = `
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">ID</th>
+              <th scope="col">Name</th>
+              <th scope="col">Price</th>
+              <th scope="col">Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            ${data.map(renderProductRow).join("")}
+          </tbody>
+        </table>
 `;
+    })
+    .catch();
+}
+getProductFetch();
