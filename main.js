@@ -85,4 +85,26 @@ function getProductAxios() {
     .catch();
 }
 
-getProductAxios();
+// getProductAxios();
+
+async function getProductAsyncFetch() {
+  const res = await fetch("http://localhost:3000/products");
+  const data = await res.json();
+  document.getElementById("list").innerHTML = `
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">ID</th>
+              <th scope="col">Name</th>
+              <th scope="col">Price</th>
+              <th scope="col">Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            ${data.map(renderProductRow).join("")}
+          </tbody>
+        </table>
+`;
+}
+
+getProductAsyncFetch();
