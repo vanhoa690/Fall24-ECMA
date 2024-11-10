@@ -1,20 +1,23 @@
 function renderProductRow(product) {
   return `
    <tr>
-            <th scope="row">${product.id}</th>
-            <td>${product.name}</td>
-            <td>${product.price} USD</td>
-            <td>
-              <button onClick=deleteProduct(${product.id}) class="btn btn-danger">Delete</button>
-            </td>
-          </tr>
+      <th scope="row">${product.id}</th>
+              <td>${product.name}</td>
+              <td>${product.price} VND</td>
+              <td>
+                <button onClick=deleteProduct(${product.id}) class="btn btn-danger">Delete</button>
+              </td>
+      </tr>
   `;
 }
 
-async function showProductList() {
-  const res = await axios.get("http://localhost:3000/products");
-  const products = res.data;
-  document.getElementById("list").innerHTML = `
+function getProductFetch() {
+  fetch("http://localhost:3000/products")
+    .then((res) => {
+      return res.json();
+    })
+    .then((data) => {
+      document.getElementById("list").innerHTML = `
         <table class="table">
           <thead>
             <tr>
@@ -25,20 +28,36 @@ async function showProductList() {
             </tr>
           </thead>
           <tbody>
-            ${products.map(renderProductRow).join("")}
+            ${data.map(renderProductRow).join("")}
           </tbody>
         </table>
 `;
+    })
+    .catch();
 }
+// getProductFetch();
 
-showProductList();
-
-async function deleteProduct(id) {
-  try {
-    if (confirm("Di choi ko?")) {
-      await axios.delete(`http://localhost:3000/products/${id}`);
-    }
-  } catch (error) {
-    console.log(error);
-  }
+function getProductAxios() {
+  axios
+    .get("http://localhost:3000/products")
+    .then((res) => {
+      const products = res.data;
+      document.getElementById("list").innerHTML = `
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Name</th>
+            <th scope="col">Price</th>
+            <th scope="col">Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          ${products.map(renderProductRow).join("")}
+        </tbody>
+      </table>
+`;
+    })
+    .catch();
 }
+getProductAxios();
