@@ -1,19 +1,14 @@
 {
   "products": [
     {
-      "id": "1dd",
+      "id": "1",
       "name": "Iphone 13",
       "price": 1111
     },
     {
-      "name": "1",
-      "price": "2",
-      "id": "dUaH_hI"
-    },
-    {
-      "name": "3",
-      "price": "4",
-      "id": "RfZqron"
+      "id": "2",
+      "name": "Iphone 14",
+      "price": 1111
     }
   ]
 }
