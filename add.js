@@ -9,6 +9,7 @@ async function handleSubmit(event) {
       name: productName,
       price: productPrice,
     });
+    location.href = "/";
     alert("them thanh cong");
   } catch (error) {
     alert("Error");
