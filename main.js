@@ -5,7 +5,7 @@ function renderProductRow(product) {
               <td>${product.name}</td>
               <td>${product.price} VND</td>
               <td>
-                <button onClick=deleteProduct(${product.id}) class="btn btn-danger">Delete</button>
+                <button onClick=deleteProduct('${product.id}') class="btn btn-danger">Delete</button>
               </td>
       </tr>
   `;
