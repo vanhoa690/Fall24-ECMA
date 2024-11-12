@@ -6,6 +6,6 @@ function handleSubmit(event) {
 
   axios.post("http://localhost:3000/products", {
     name: productName,
-    price: productPrice,
+    price: Number(productPrice),
   });
 }
