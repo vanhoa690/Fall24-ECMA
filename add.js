@@ -2,11 +2,13 @@ const productId = location.search.split("=")[1];
 
 async function getProductDetail() {
   if (!productId) return;
-
-  const res = await axios.get(`http://localhost:3000/products/${productId}`);
-
-  document.getElementById("name").value = res.data.name;
-  document.getElementById("price").value = res.data.price;
+  try {
+    const res = await axios.get(`http://localhost:3000/products/${productId}`);
+    document.getElementById("name").value = res.data.name;
+    document.getElementById("price").value = res.data.price;
+  } catch (error) {
+    console.log("error");
+  }
 }
 
 getProductDetail();
