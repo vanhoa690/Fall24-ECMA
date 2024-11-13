@@ -1,3 +1,15 @@
+console.log(location.search.split("=")[1]);
+
+async function getProductDetail() {
+  const productId = location.search.split("=")[1];
+  const res = await axios.get(`http://localhost:3000/products/${productId}`);
+  console.log(res);
+  
+  document.getElementById("name").value = res.data.name;
+}
+
+getProductDetail();
+
 async function handleSubmit(event) {
   event.preventDefault();
 

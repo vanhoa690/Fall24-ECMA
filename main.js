@@ -40,6 +40,7 @@ async function deleteProduct(id) {
   if (confirm("Di choi ko")) {
     try {
       await axios.delete(`http://localhost:3000/products/${id}`);
+      alert("Xoa thanh cong");
     } catch (error) {
       console.log(error);
     }
