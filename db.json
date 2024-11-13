@@ -31,24 +31,9 @@
       "id": 6
     },
     {
-      "name": "",
-      "price": 0,
-      "id": 7
-    },
-    {
-      "name": "",
-      "price": -7,
-      "id": 8
-    },
-    {
       "name": "3",
       "price": 3,
       "id": 9
-    },
-    {
-      "name": "2",
-      "price": 2,
-      "id": 10
     },
     {
       "name": "4",
@@ -109,6 +94,11 @@
       "name": "3",
       "price": 3,
       "id": 22
+    },
+    {
+      "name": "ten san pham",
+      "price": 1,
+      "id": 23
     }
   ]
 }
