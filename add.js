@@ -1,10 +1,15 @@
+const productId = location.search.split("=")[1];
+
 async function getProductDetail() {
-  const productId = location.search.split("=")[1];
+  if (!productId) return;
+  try {
+    const res = await axios.get(`http://localhost:3000/products/${productId}`);
 
-  const res = await axios.get(`http://localhost:3000/products/${productId}`);
-
-  document.getElementById("name").value = res.data.name;
-  document.getElementById("price").value = res.data.price;
+    document.getElementById("name").value = res.data.name;
+    document.getElementById("price").value = res.data.price;
+  } catch (error) {
+    alert("error");
+  }
 }
 
 getProductDetail();
@@ -14,11 +19,17 @@ async function handleSubmit(event) {
 
   const productName = document.getElementById("name").value;
   const productPrice = document.getElementById("price").value;
+  const data = {
+    name: productName,
+    price: Number(productPrice),
+  };
   try {
-    await axios.post("http://localhost:3000/products", {
-      name: productName,
-      price: Number(productPrice),
-    });
+    if (productId) {
+      await axios.put(`http://localhost:3000/products/${productId}`, data);
+    } else {
+      await axios.post("http://localhost:3000/products", data);
+    }
+
     location.href = "/";
     alert("them thanh cong");
   } catch (error) {
