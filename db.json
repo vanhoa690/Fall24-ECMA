@@ -11,9 +11,9 @@
       "price": 800
     },
     {
-      "id": 3,
-      "name": "Tablet",
-      "price": 600
+      "name": "Tablet update",
+      "price": 600,
+      "id": 3
     }
   ]
 }
