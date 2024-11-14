@@ -18,7 +18,11 @@ async function handleSubmit(event) {
     price: Number(productPrice),
   };
   try {
-    await axios.post("http://localhost:3000/products", data);
+    if (productId) {
+      await axios.put(`http://localhost:3000/products/${productId}`, data);
+    } else {
+      await axios.post("http://localhost:3000/products", data);
+    }
 
     location.href = "/";
     alert("them thanh cong");
