@@ -1,20 +1,18 @@
-import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
-import "./App.css";
+import { useRoutes } from "react-router-dom";
+import ProductAdd from "./pages/ProductAdd";
+import ProductEdit from "./pages/ProductEdit";
+import ProductList from "./pages/ProductList";
 
 function App() {
-  const [count, setCount] = useState(0);
-  const myName = "hoadv";
-  function sayHello() {
-    alert(myName);
-  }
-  return (
-    <>
-      <h1>hello {myName}</h1>
-      <button onClick={sayHello}>SayHello</button>
-    </>
-  );
+  const routes = [
+    { path: "product/list", element: <ProductList /> },
+    { path: "product/add", element: <ProductAdd /> },
+    { path: "product/edit/:id", element: <ProductEdit /> },
+  ];
+
+  const element = useRoutes(routes);
+
+  return <div>{element}</div>;
 }
 
 export default App;
