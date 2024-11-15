@@ -1,6 +1,7 @@
 import { useRoutes } from "react-router-dom";
 import ProductList from "./pages/ProductList";
 import ProductAdd from "./pages/ProductAdd";
+import ProductEdit from "./pages/ProductEdit";
 
 function App() {
   const routes = [
