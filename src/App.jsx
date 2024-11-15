@@ -17,7 +17,10 @@ function App() {
       element: <ProductEdit />,
     },
   ];
-  return <div></div>;
+
+  const element = useRoutes(routes);
+
+  return <div>{element}</div>;
 }
 
 export default App;
