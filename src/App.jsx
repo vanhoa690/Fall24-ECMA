@@ -1,20 +1,14 @@
-import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
-import "./App.css";
+import { useRoutes } from "react-router-dom";
+import ProductList from "./pages/ProductList";
 
 function App() {
-  const [count, setCount] = useState(0);
-  const myName = "hoadv";
-  function sayHello() {
-    alert(myName);
-  }
-  return (
-    <div>
-      <h1>{myName}</h1>
-      <button onClick={sayHello}>Say Hello</button>
-    </div>
-  );
+  const routes = [
+    {
+      path: "/product/list",
+      element: <ProductList />,
+    },
+  ];
+  return <div></div>;
 }
 
 export default App;
