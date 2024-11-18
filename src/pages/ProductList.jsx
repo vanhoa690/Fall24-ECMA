@@ -1,32 +1,16 @@
 import axios from "axios";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 function ProductList() {
-  // map show product list
-  const products = [
-    {
-      id: 1,
-      name: "Smartphone",
-      price: 800,
-    },
-    {
-      id: 2,
-      name: "Laptop",
-      price: 800,
-    },
-    {
-      name: "Tablet",
-      price: 600,
-      id: 3,
-    },
-  ];
+  //useState
+  const [products, setProducts] = useState([]); // init data
 
   async function getProductList() {
     const res = await axios.get("http://localhost:3000/products");
-    console.log(res);
+    setProducts(res.data);
   }
 
-  // useEffect()
+  // useEffect(): goi API
   useEffect(() => {
     getProductList();
   }, []);
