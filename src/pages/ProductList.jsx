@@ -1,3 +1,5 @@
+import axios from "axios";
+
 function ProductList() {
   // map render product list
   const products = [
@@ -17,6 +19,13 @@ function ProductList() {
       id: 3,
     },
   ];
+
+  async function getProductList() {
+    const res = await axios.get("http://localhost:3000/products");
+    console.log(res);
+  }
+
+  getProductList();
 
   return (
     <div className="container">
