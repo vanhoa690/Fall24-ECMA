@@ -1,5 +1,5 @@
 import axios from "axios";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 function ProductList() {
   const [products, setProducts] = useState([]);
@@ -9,9 +9,9 @@ function ProductList() {
     setProducts(res.data);
   }
 
-  // getProductList();
-  console.log(products);
-
+  useEffect(() => {
+    // getProductList();
+  });
   return (
     <div className="container">
       <h1 className="text-center my-2">ProductList</h1>
