@@ -3,6 +3,7 @@ import ProductAdd from "./pages/ProductAdd";
 import ProductEdit from "./pages/ProductEdit";
 import ProductList from "./pages/ProductList";
 import Homepage from "./pages/Homepage";
+import { Toaster } from "react-hot-toast";
 
 function App() {
   const routes = [
@@ -25,6 +26,11 @@ function App() {
   ];
 
   const element = useRoutes(routes);
-  return <main>{element}</main>;
+  return (
+    <main>
+      <Toaster />
+      {element}
+    </main>
+  );
 }
 export default App;

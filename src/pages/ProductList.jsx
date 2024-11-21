@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
+import toast from "react-hot-toast";
 
 function ProductList() {
   const [products, setProducts] = useState([]);
@@ -7,6 +8,18 @@ function ProductList() {
   async function getProductList() {
     const res = await axios.get("http://localhost:3000/products");
     setProducts(res.data);
+  }
+
+  async function deleteProduct(id) {
+    if (confirm("Di choi ko")) {
+      try {
+        await axios.delete(`http://localhost:3000/products/${id}`);
+        toast.success("Xoa thanh cong");
+      } catch (error) {
+        console.log(error);
+        toast.error("Error");
+      }
+    }
   }
 
   useEffect(() => {
