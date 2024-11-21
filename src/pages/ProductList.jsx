@@ -1,28 +1,18 @@
 import axios from "axios";
+import { useState, useEffect } from "react";
 
 function ProductList() {
-  const products = [
-    {
-      id: 1,
-      name: "Smartphone",
-      price: 800,
-    },
-    {
-      id: 2,
-      name: "Smartphone",
-      price: 800,
-    },
-    {
-      name: "Tablet 16 update",
-      price: 900,
-      id: 4,
-    },
-  ];
+  const [products, setProducts] = useState([]);
 
   async function getProductList() {
     const res = await axios.get("http://localhost:3000/products");
-    console.log(res);
+    setProducts(res.data);
   }
+
+  useEffect(() => {
+    getProductList();
+  }, []);
+
   return (
     <div className="container">
       <h1 className="text-center my-2">ProductList</h1>

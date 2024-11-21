@@ -1,3 +1,19 @@
 {
-  "products": []
+  "products": [
+    {
+      "id": 1,
+      "name": "Smartphone",
+      "price": 800
+    },
+    {
+      "id": 2,
+      "name": "Smartphone",
+      "price": 800
+    },
+    {
+      "name": "Tablet 16 update",
+      "price": 900,
+      "id": 4
+    }
+  ]
 }
