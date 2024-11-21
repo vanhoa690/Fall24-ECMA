@@ -10,8 +10,8 @@ function ProductList() {
   }
 
   useEffect(() => {
-    // getProductList();
-  });
+    getProductList();
+  }, []);
   return (
     <div className="container">
       <h1 className="text-center my-2">ProductList</h1>
@@ -25,9 +25,9 @@ function ProductList() {
           </tr>
         </thead>
         <tbody>
-          {products.map((product) => {
+          {products.map((product, index) => {
             return (
-              <tr>
+              <tr key={index}>
                 <th scope="row">{product.id}</th>
                 <td>{product.name}</td>
                 <td>{product.price} USD</td>
