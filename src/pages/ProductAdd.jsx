@@ -10,6 +10,7 @@ function ProductAdd() {
     try {
       await axios.post("http://localhost:3000/products", data);
       toast.success("Them thanh cong");
+      // chuyen sang product list
     } catch (error) {
       console.log(error);
     }
