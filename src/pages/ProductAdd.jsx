@@ -1,3 +1,7 @@
+import axios from "axios";
+import toast from "react-hot-toast";
+import { useForm } from "react-hook-form";
+
 function ProductAdd() {
   async function handleSubmit(event) {
     event.preventDefault();
@@ -8,6 +12,7 @@ function ProductAdd() {
     };
     try {
       await axios.post("http://localhost:3000/products", data);
+      toast.success("Them thanh cong");
     } catch (error) {
       console.log("Error");
     }
