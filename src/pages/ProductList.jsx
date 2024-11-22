@@ -1,22 +1,15 @@
-function ProductList() {
-  const products = [
-    {
-      id: 1,
-      name: "Laptop",
-      price: 800,
-    },
-    {
-      id: 2,
-      name: "Laptop",
-      price: 800,
-    },
-    {
-      id: 3,
-      name: "Laptop",
-      price: 800,
-    },
-  ];
+import axios from "axios";
 
+function ProductList() {
+  // const products = [];
+  const [products, setProducts] = useState([]);
+
+  async function getProductList() {
+    const res = await axios.get("http://localhost:3000/products");
+    console.log(res.data);
+    setProducts(res.data);
+  }
+  getProductList();
   return (
     <div className="container">
       <h1 className="text-center my-2">ProductList</h1>
@@ -30,9 +23,9 @@ function ProductList() {
           </tr>
         </thead>
         <tbody>
-          {products.map((product) => {
+          {products.map((product, index) => {
             return (
-              <tr>
+              <tr key={index}>
                 <th scope="row">{product.id}</th>
                 <td>{product.name}</td>
                 <td>{product.price} USD</td>
