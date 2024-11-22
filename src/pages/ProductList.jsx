@@ -22,6 +22,7 @@ function ProductList() {
         // reload page
       } catch (error) {
         console.log(error);
+        toast.error("Xoa KO thanh cong");
       }
     }
   }
