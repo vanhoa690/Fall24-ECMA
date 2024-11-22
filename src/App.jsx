@@ -45,13 +45,17 @@ function App() {
                   Product List
                 </a>
               </li>
+              <li className="nav-item">
+                <a className="nav-link" href="/product/add">
+                  Product Add
+                </a>
+              </li>
             </ul>
           </div>
         </div>
       </nav>
-
+      <div className="container my-2">{element}</div>
       <Toaster />
-      {element}
     </main>
   );
 }

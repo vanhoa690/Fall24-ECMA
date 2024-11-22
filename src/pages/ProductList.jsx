@@ -15,6 +15,7 @@ function ProductList() {
       try {
         await axios.delete(`http://localhost:3000/products/${id}`);
         toast.success("Xoa thanh cong");
+        // reload page
       } catch (error) {
         console.log(error);
         toast.error("Error");
