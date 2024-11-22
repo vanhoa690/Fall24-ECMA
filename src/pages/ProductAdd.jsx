@@ -29,6 +29,17 @@ function ProductAdd() {
             {...register("name")}
           />
         </div>
+        <div className="mb-3">
+          <label htmlFor="price" className="form-label">
+            Price
+          </label>
+          <input
+            type="number"
+            className="form-control"
+            id="price"
+            {...register("price")}
+          />
+        </div>
         <button type="submit" className="btn btn-primary">
           Submit
         </button>
