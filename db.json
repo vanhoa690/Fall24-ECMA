@@ -1,11 +1,6 @@
 {
   "products": [
     {
-      "id": 1,
-      "name": "Smartphone",
-      "price": 800
-    },
-    {
       "id": 2,
       "name": "Laptop",
       "price": 800
