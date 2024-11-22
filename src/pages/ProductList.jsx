@@ -1,4 +1,22 @@
 function ProductList() {
+  const products = [
+    {
+      id: 1,
+      name: "Laptop",
+      price: 800,
+    },
+    {
+      id: 2,
+      name: "Laptop",
+      price: 800,
+    },
+    {
+      id: 3,
+      name: "Laptop",
+      price: 800,
+    },
+  ];
+
   return (
     <div className="container">
       <h1 className="text-center my-2">ProductList</h1>
@@ -12,15 +30,19 @@ function ProductList() {
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <th scope="row">1</th>
-            <td>Iphone 16</td>
-            <td>100 USD</td>
-            <td>
-              <button className="btn btn-danger">Delete</button>
-              <button className="btn btn-info">Edit</button>
-            </td>
-          </tr>
+          {products.map((product) => {
+            return (
+              <tr>
+                <th scope="row">{product.id}</th>
+                <td>{product.name}</td>
+                <td>{product.price} USD</td>
+                <td>
+                  <button className="btn btn-danger">Delete</button>
+                  <button className="btn btn-info">Edit</button>
+                </td>
+              </tr>
+            );
+          })}
         </tbody>
       </table>
     </div>
