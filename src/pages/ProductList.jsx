@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
+import toast from "react-hot-toast";
 
 function ProductList() {
   const [products, setProducts] = useState([]);
@@ -17,7 +18,8 @@ function ProductList() {
     if (confirm("Di choi ko")) {
       try {
         await axios.delete(`http://localhost:3000/products/${id}`);
-        // alert("Xoa thanh cong");
+        toast.success("Xoa thanh cong");
+        // reload page
       } catch (error) {
         console.log(error);
       }
