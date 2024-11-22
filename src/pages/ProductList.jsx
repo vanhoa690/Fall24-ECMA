@@ -1,31 +1,4 @@
-import axios from "axios";
-import { useEffect, useState } from "react";
-import toast from "react-hot-toast";
-
 function ProductList() {
-  const [products, setProducts] = useState([]);
-
-  async function getProductList() {
-    const res = await axios.get("http://localhost:3000/products");
-    setProducts(res.data);
-  }
-
-  async function deleteProduct(id) {
-    if (confirm("Di choi ko")) {
-      try {
-        await axios.delete(`http://localhost:3000/products/${id}`);
-        toast.success("Xoa thanh cong");
-        // reload page
-      } catch (error) {
-        console.log(error);
-        toast.error("Error");
-      }
-    }
-  }
-
-  useEffect(() => {
-    getProductList();
-  }, []);
   return (
     <div className="container">
       <h1 className="text-center my-2">ProductList</h1>
@@ -39,24 +12,15 @@ function ProductList() {
           </tr>
         </thead>
         <tbody>
-          {products.map((product, index) => {
-            return (
-              <tr key={index}>
-                <th scope="row">{product.id}</th>
-                <td>{product.name}</td>
-                <td>{product.price} USD</td>
-                <td>
-                  <button
-                    onClick={() => deleteProduct(product.id)}
-                    className="btn btn-danger"
-                  >
-                    Delete
-                  </button>
-                  <button className="btn btn-info">Edit</button>
-                </td>
-              </tr>
-            );
-          })}
+          <tr>
+            <th scope="row">1</th>
+            <td>Iphone 16</td>
+            <td>100 USD</td>
+            <td>
+              <button className="btn btn-danger">Delete</button>
+              <button className="btn btn-info">Edit</button>
+            </td>
+          </tr>
         </tbody>
       </table>
     </div>
