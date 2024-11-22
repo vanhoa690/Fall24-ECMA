@@ -13,6 +13,16 @@ function ProductList() {
     getProductList();
   }, []);
 
+  async function deleteProduct(id) {
+    if (confirm("Di choi ko")) {
+      try {
+        await axios.delete(`http://localhost:3000/products/${id}`);
+        // alert("Xoa thanh cong");
+      } catch (error) {
+        console.log(error);
+      }
+    }
+  }
   return (
     <div className="container">
       <h1 className="text-center my-2">ProductList</h1>
@@ -33,7 +43,12 @@ function ProductList() {
                 <td>{product.name}</td>
                 <td>{product.price} USD</td>
                 <td>
-                  <button className="btn btn-danger">Delete</button>
+                  <button
+                    onClick={() => deleteProduct(product.id)}
+                    className="btn btn-danger"
+                  >
+                    Delete
+                  </button>
                   <button className="btn btn-info">Edit</button>
                 </td>
               </tr>
