@@ -28,8 +28,34 @@ function App() {
   const element = useRoutes(routes);
   return (
     <main>
+      <nav className="navbar navbar-expand-lg bg-body-tertiary">
+        <div className="container">
+          <a className="navbar-brand" href="/">
+            REACT
+          </a>
+          <div className="collapse navbar-collapse" id="navbarNav">
+            <ul className="navbar-nav">
+              <li className="nav-item">
+                <a className="nav-link active" aria-current="page" href="/">
+                  Home
+                </a>
+              </li>
+              <li className="nav-item">
+                <a className="nav-link" href="/product/list">
+                  Product List
+                </a>
+              </li>
+              <li className="nav-item">
+                <a className="nav-link" href="/product/add">
+                  Product Add
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      <div className="container my-2">{element}</div>
       <Toaster />
-      {element}
     </main>
   );
 }
