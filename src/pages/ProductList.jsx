@@ -15,6 +15,7 @@ function ProductList() {
       try {
         await axios.delete(`http://localhost:3000/products/${id}`);
         toast.success("Xoa thanh cong");
+        // cap nhat danh sach
       } catch (error) {
         console.log(error);
         toast.error("Error");
@@ -45,7 +46,12 @@ function ProductList() {
                 <td>{product.name}</td>
                 <td>{product.price} USD</td>
                 <td>
-                  <button className="btn btn-danger">Delete</button>
+                  <button
+                    onClick={() => deleteProduct(product.id)}
+                    className="btn btn-danger"
+                  >
+                    Delete
+                  </button>
                   <button className="btn btn-info">Edit</button>
                 </td>
               </tr>
