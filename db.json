@@ -11,9 +11,24 @@
       "price": 800
     },
     {
-      "name": "Tablet 16 update",
-      "price": 900,
+      "name": "Iphone 16",
+      "price": 100,
+      "id": 3
+    },
+    {
+      "name": "Iphone 16",
+      "price": 100,
       "id": 4
+    },
+    {
+      "name": "Iphone 16",
+      "price": 100,
+      "id": 5
+    },
+    {
+      "name": "Iphone 16",
+      "price": 100,
+      "id": 6
     }
   ]
 }
