@@ -16,19 +16,9 @@
       "id": 3
     },
     {
-      "name": "Iphone 16",
-      "price": 100,
-      "id": 4
-    },
-    {
-      "name": "Iphone 16",
-      "price": 100,
-      "id": 5
-    },
-    {
-      "name": "Iphone 16",
-      "price": 100,
-      "id": 6
+      "name": "ten san pham",
+      "price": "3333",
+      "id": 7
     }
   ]
 }
