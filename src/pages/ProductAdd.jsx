@@ -3,19 +3,23 @@ import toast from "react-hot-toast";
 import { useForm } from "react-hook-form";
 
 function ProductAdd() {
-  const { register, handleSubmit } = useForm();
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
 
   async function onSubmit(data) {
-    console.log(data);
-
     try {
       await axios.post("http://localhost:3000/products", data);
 
       toast.success("them thanh cong");
+      // chuyen trang list
     } catch (error) {
       toast.error("error");
     }
   }
+
   return (
     <div>
       <h1>ProductAdd</h1>
@@ -28,8 +32,13 @@ function ProductAdd() {
             type="text"
             className="form-control"
             id="name"
-            {...register("name")}
+            {...register("name", {
+              required: "Name is required",
+            })}
           />
+          {errors?.name && (
+            <small className="text-danger">{errors.name.message}</small>
+          )}
         </div>
         <div className="mb-3">
           <label htmlFor="price" className="form-label">
@@ -39,8 +48,17 @@ function ProductAdd() {
             type="number"
             className="form-control"
             id="price"
-            {...register("price")}
+            {...register("price", {
+              required: "Price is required",
+              min: {
+                value: 0,
+                message: "Price > 0",
+              },
+            })}
           />
+          {errors?.price && (
+            <small className="text-danger">{errors.price.message}</small>
+          )}
         </div>
         <button type="submit" className="btn btn-primary">
           Submit

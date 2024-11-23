@@ -24,6 +24,11 @@
       "name": "Iphone 16",
       "price": 100,
       "id": 5
+    },
+    {
+      "name": "1",
+      "price": "2",
+      "id": 6
     }
   ]
 }
