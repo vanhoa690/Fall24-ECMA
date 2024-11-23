@@ -46,12 +46,7 @@ function ProductList() {
                 <td>{product.name}</td>
                 <td>{product.price} USD</td>
                 <td>
-                  <button
-                    onClick={() => deleteProduct(product.id)}
-                    className="btn btn-danger"
-                  >
-                    Delete
-                  </button>
+                  <button className="btn btn-danger">Delete</button>
                   <button className="btn btn-info">Edit</button>
                 </td>
               </tr>
