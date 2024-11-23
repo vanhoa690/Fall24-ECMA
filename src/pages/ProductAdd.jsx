@@ -1,3 +1,4 @@
+import axios from "axios";
 import toast from "react-hot-toast";
 
 function ProductAdd() {
@@ -19,7 +20,7 @@ function ProductAdd() {
   return (
     <div>
       <h1>ProductAdd</h1>
-      <form>
+      <form onSubmit={(event) => handleSubmit(event)}>
         <div className="mb-3">
           <label htmlFor="name" className="form-label">
             Name
