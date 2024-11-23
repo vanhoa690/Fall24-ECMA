@@ -1,21 +1,37 @@
+import toast from "react-hot-toast";
+
 function ProductAdd() {
+  async function handleSubmit(event) {
+    event.preventDefault();
+    const data = {
+      name: "Iphone 16",
+      price: 100,
+    };
+    try {
+      await axios.post("http://localhost:3000/products", data);
+
+      toast.success("them thanh cong");
+    } catch (error) {
+      toast.error("error");
+    }
+  }
   return (
     <div>
       <h1>ProductAdd</h1>
       <form>
-        <div class="mb-3">
-          <label for="name" class="form-label">
+        <div className="mb-3">
+          <label htmlFor="name" className="form-label">
             Name
           </label>
-          <input type="text" class="form-control" id="name" />
+          <input type="text" className="form-control" id="name" />
         </div>
-        <div class="mb-3">
-          <label for="price" class="form-label">
+        <div className="mb-3">
+          <label htmlFor="price" className="form-label">
             Price
           </label>
-          <input type="number" class="form-control" id="price" />
+          <input type="number" className="form-control" id="price" />
         </div>
-        <button type="submit" class="btn btn-primary">
+        <button type="submit" className="btn btn-primary">
           Submit
         </button>
       </form>
