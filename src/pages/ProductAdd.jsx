@@ -11,6 +11,7 @@ function ProductAdd() {
       await axios.post("http://localhost:3000/products", data);
 
       toast.success("them thanh cong");
+      // chuyen sang trang list
     } catch (error) {
       toast.error("error");
     }
@@ -29,6 +30,7 @@ function ProductAdd() {
             id="name"
             {...register("name")}
           />
+          <small className="text-danger">Name is Required</small>
         </div>
         <div className="mb-3">
           <label htmlFor="price" className="form-label">
@@ -40,6 +42,7 @@ function ProductAdd() {
             id="price"
             {...register("price")}
           />
+          <small className="text-danger">Price is Required</small>
         </div>
         <button type="submit" className="btn btn-primary">
           Submit
