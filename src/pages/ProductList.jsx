@@ -10,6 +10,10 @@ function ProductList() {
     setProducts(res.data);
   }
 
+  useEffect(() => {
+    getProductList();
+  }, []);
+
   async function deleteProduct(id) {
     if (confirm("Di choi ko")) {
       try {
@@ -23,9 +27,6 @@ function ProductList() {
     }
   }
 
-  useEffect(() => {
-    getProductList();
-  }, []);
   return (
     <div className="container">
       <h1 className="text-center my-2">ProductList</h1>
