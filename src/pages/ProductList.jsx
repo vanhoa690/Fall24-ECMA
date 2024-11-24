@@ -52,7 +52,10 @@ function ProductList() {
                   >
                     Delete
                   </button>
-                  <button className="btn btn-info">Edit</button>
+                  {/* /product/edit/:id */}
+                  <a href={`/product/edit/${product.id}`}>
+                    <button className="btn btn-info">Edit</button>
+                  </a>
                 </td>
               </tr>
             );
