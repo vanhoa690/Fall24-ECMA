@@ -1,27 +1,26 @@
 import axios from "axios";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { useForm } from "react-hook-form";
 import toast from "react-hot-toast";
 import { useParams } from "react-router-dom";
 
 function ProductEdit() {
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+    reset,
+  } = useForm();
   const params = useParams();
-  const [product, setProduct] = useState();
 
   async function getProductDetail(id) {
     const res = await axios.get(`http://localhost:3000/products/${id}`);
-    setProduct(res.data);
+    reset(res.data);
   }
 
   useEffect(() => {
     getProductDetail(params.id);
   }, []);
-
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-  } = useForm();
 
   async function onSubmit(data) {
     try {

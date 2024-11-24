@@ -1,9 +1,9 @@
 {
   "products": [
     {
-      "id": 1,
-      "name": "Smartphone",
-      "price": 800
+      "name": "laptop",
+      "price": "111",
+      "id": 1
     },
     {
       "id": 2,
@@ -21,7 +21,7 @@
       "id": 4
     },
     {
-      "name": "Iphone 16",
+      "name": "Iphone 16 update",
       "price": 100,
       "id": 5
     },
