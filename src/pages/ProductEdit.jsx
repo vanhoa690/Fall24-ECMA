@@ -2,9 +2,11 @@ import axios from "axios";
 import { useEffect } from "react";
 import { useForm } from "react-hook-form";
 import toast from "react-hot-toast";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 
 function ProductEdit() {
+  const nav = useNavigate();
+
   const {
     register,
     handleSubmit,
@@ -28,6 +30,7 @@ function ProductEdit() {
 
       toast.success("them thanh cong");
       // chuyen trang list
+      nav("/product/list");
     } catch (error) {
       toast.error("error");
     }

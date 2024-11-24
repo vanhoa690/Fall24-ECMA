@@ -7,28 +7,8 @@
     },
     {
       "id": 2,
-      "name": "Smartphone",
+      "name": "Smartphone 1",
       "price": 800
-    },
-    {
-      "name": "Iphone 11",
-      "price": 100,
-      "id": 3
-    },
-    {
-      "name": "Iphone 16",
-      "price": 100,
-      "id": 4
-    },
-    {
-      "name": "Iphone 16 update",
-      "price": 100,
-      "id": 5
-    },
-    {
-      "name": "1",
-      "price": "2",
-      "id": 6
     }
   ]
 }
