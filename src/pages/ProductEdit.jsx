@@ -1,15 +1,17 @@
 import axios from "axios";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { useForm } from "react-hook-form";
 import toast from "react-hot-toast";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 
 function ProductEdit() {
+  const nav = useNavigate();
   const params = useParams();
   const {
     register,
     handleSubmit,
     formState: { errors },
+    reset,
   } = useForm();
 
   async function onSubmit(data) {
@@ -18,16 +20,15 @@ function ProductEdit() {
 
       toast.success("them thanh cong");
       // chuyen trang list
+      nav("/product/list");
     } catch (error) {
       toast.error("error");
     }
   }
 
-  const [product, setProduct] = useState();
-
   async function getProductDetail(id) {
     const res = await axios.get(`http://localhost:3000/products/${id}`);
-    setProduct(res.data);
+    reset(res.data);
   }
 
   useEffect(() => {
@@ -36,7 +37,7 @@ function ProductEdit() {
 
   return (
     <div>
-      <h1>ProductAdd</h1>
+      <h1>Product Edit</h1>
       <form onSubmit={handleSubmit(onSubmit)}>
         <div className="mb-3">
           <label htmlFor="name" className="form-label">
