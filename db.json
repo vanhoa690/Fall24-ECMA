@@ -1,11 +1,6 @@
 {
   "products": [
     {
-      "name": "Iphone 16 werwer",
-      "price": "2000",
-      "id": 2
-    },
-    {
       "name": "Iphone 16",
       "price": 100,
       "id": 4
@@ -14,6 +9,11 @@
       "name": "them san pham",
       "price": "111",
       "id": 5
+    },
+    {
+      "name": "Iphone 16",
+      "price": 100,
+      "id": 6
     }
   ]
 }
