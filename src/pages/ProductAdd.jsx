@@ -1,8 +1,10 @@
 import axios from "axios";
 import { useForm } from "react-hook-form";
 import toast from "react-hot-toast";
+import { useNavigate } from "react-router-dom";
 
 function ProductAdd() {
+  const nav = useNavigate();
   const {
     register,
     handleSubmit,
@@ -10,18 +12,16 @@ function ProductAdd() {
   } = useForm();
 
   async function onSubmit(data) {
-    console.log(data);
-
     try {
       await axios.post("http://localhost:3000/products", data);
       toast.success("Them thanh cong");
       // chuyen sang product list
+      nav("/product/list");
     } catch (error) {
       console.log(error);
       toast.error("Error");
     }
   }
-  console.log(errors);
 
   return (
     <div>
