@@ -3,7 +3,11 @@ import { useForm } from "react-hook-form";
 import toast from "react-hot-toast";
 
 function ProductAdd() {
-  const { register, handleSubmit } = useForm();
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
 
   async function onSubmit(data) {
     console.log(data);
@@ -16,6 +20,9 @@ function ProductAdd() {
       toast.error("Error");
     }
   }
+
+  console.log(errors);
+
   return (
     <div>
       <h1>ProductAdd</h1>
@@ -28,8 +35,11 @@ function ProductAdd() {
             type="text"
             className="form-control"
             id="name"
-            {...register("name")}
+            {...register("name", {
+              required: "Name is Requied",
+            })}
           />
+          <small className="text-danger">{errors.name?.message}</small>
         </div>
         <div className="mb-3">
           <label htmlFor="price" className="form-label">
@@ -39,8 +49,11 @@ function ProductAdd() {
             type="number"
             className="form-control"
             id="price"
-            {...register("price")}
+            {...register("price", {
+              required: "Price is Requied",
+            })}
           />
+          <small className="text-danger">{errors.price?.message}</small>
         </div>
         <button type="submit" className="btn btn-primary">
           Submit
