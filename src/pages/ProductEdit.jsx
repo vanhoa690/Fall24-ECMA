@@ -1,5 +1,5 @@
 import axios from "axios";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { useForm } from "react-hook-form";
 import toast from "react-hot-toast";
 import { useNavigate, useParams } from "react-router-dom";
@@ -11,6 +11,7 @@ function ProductEdit() {
     register,
     handleSubmit,
     formState: { errors },
+    reset,
   } = useForm();
 
   async function onSubmit(data) {
@@ -24,16 +25,16 @@ function ProductEdit() {
       toast.error("Error");
     }
   }
-  const [product, setProduct] = useState();
 
   async function getProductDetail(id) {
     const res = await axios.get(`http://localhost:3000/products/${id}`);
-    setProduct(res.data);
+    reset(res.data);
   }
 
   useEffect(() => {
     getProductDetail(params.id);
   }, []);
+
   return (
     <div>
       <h1>Product Edit</h1>
