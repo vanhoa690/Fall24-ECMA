@@ -1,17 +1,17 @@
 import axios from "axios";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { useNavigate, useParams } from "react-router-dom";
 
 function ProductEdit() {
   const params = useParams();
 
-  const [product, setProduct] = useState();
   const nav = useNavigate();
   const {
     register,
     handleSubmit,
     formState: { errors },
+    reset,
   } = useForm();
 
   async function onSubmit(data) {
@@ -27,7 +27,7 @@ function ProductEdit() {
   }
   async function getProductDetail(id) {
     const res = await axios.get(`http://localhost:3000/products/${id}`);
-    setProduct(res.data);
+    reset(res.data);
   }
 
   useEffect(() => {
