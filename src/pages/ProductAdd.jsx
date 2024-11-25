@@ -51,6 +51,10 @@ function ProductAdd() {
             id="price"
             {...register("price", {
               required: "Price is required",
+              min: {
+                value: 0,
+                message: "Price > 0",
+              },
             })}
           />
           <small className="text-danger">{errors.price?.message}</small>
