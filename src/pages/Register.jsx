@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useForm } from "react-hook-form";
+import toast from "react-hot-toast";
 
 function Register() {
   const {
@@ -9,8 +10,12 @@ function Register() {
   } = useForm();
 
   async function onSubmit(data) {
-    console.log(data);
-    await axios.post("http://localhost:3000/register", data);
+    try {
+      await axios.post("http://localhost:3000/register", data);
+      toast.success("Dang ky thanh cong");
+    } catch (error) {
+      toast.error("something error");
+    }
   }
   return (
     <div>
