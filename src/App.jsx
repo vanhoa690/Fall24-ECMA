@@ -4,14 +4,9 @@ import ProductEdit from "./pages/ProductEdit";
 import ProductList from "./pages/ProductList";
 import Homepage from "./pages/Homepage";
 import { Toaster } from "react-hot-toast";
-import Register from "./pages/Register";
 
 function App() {
   const routes = [
-    {
-      path: "register",
-      element: <Register />,
-    },
     {
       path: "/",
       element: <Homepage />,

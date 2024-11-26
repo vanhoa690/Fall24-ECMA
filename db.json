@@ -5,12 +5,5 @@
       "price": "111",
       "id": 1
     }
-  ],
-  "users": [
-    {
-      "email": "hoadv21@fpt.edu.vn",
-      "password": "$2a$10$g/Ni4mWxGlbHaQuLPMeZxeGXjDpgp5ifj4EV3Y8ejVwlxRQeoaO.W",
-      "id": 1
-    }
   ]
 }
