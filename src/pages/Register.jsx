@@ -24,7 +24,7 @@ function Register() {
               className="form-control"
               id="exampleInputEmail1"
               aria-describedby="emailHelp"
-              {...register("email ", {
+              {...register("email", {
                 required: "Email is required",
               })}
             />
