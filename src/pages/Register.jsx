@@ -10,9 +10,12 @@ function Register() {
   } = useForm();
 
   async function onSubmit(data) {
-    console.log(data);
-    await axios.post("http://localhost:3000/register", data);
-    toast.success("Dang ky thanh cong");
+    try {
+      await axios.post("http://localhost:3000/register", data);
+      toast.success("Dang ky thanh cong");
+    } catch (error) {
+      toast.error("something error");
+    }
   }
   return (
     <div>
@@ -24,12 +27,16 @@ function Register() {
               Email address
             </label>
             <input
-              type="email"
+              type="text"
               className="form-control"
               id="exampleInputEmail1"
               aria-describedby="emailHelp"
               {...register("email", {
                 required: "Email is required",
+                pattern: {
+                  value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+                  message: "invalid email address",
+                },
               })}
             />
             <small className="text-danger">{errors.email?.message}</small>
@@ -44,6 +51,10 @@ function Register() {
               id="exampleInputPassword1"
               {...register("password", {
                 required: "Password is required",
+                minLength: {
+                  value: 6,
+                  message: "Toi thieu 6 ky tu",
+                },
               })}
             />
             <small className="text-danger">{errors.password?.message}</small>
