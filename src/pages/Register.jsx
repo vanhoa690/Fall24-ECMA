@@ -27,6 +27,10 @@ function Register() {
             aria-describedby="emailHelp"
             {...register("email", {
               required: "email is required",
+              pattern: {
+                value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+                message: "invalid email address",
+              },
             })}
           />
           <small className="text-danger">{errors.email?.message}</small>
@@ -41,6 +45,10 @@ function Register() {
             id="exampleInputPassword1"
             {...register("password", {
               required: "password is required",
+              minLength: {
+                value: 6,
+                message: "Password toi thieu 6 ky tu",
+              },
             })}
           />
           <small className="text-danger">{errors.password?.message}</small>
