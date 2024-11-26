@@ -29,6 +29,7 @@ function Register() {
               required: "email is required",
             })}
           />
+          <small className="text-danger">{errors.email?.message}</small>
         </div>
         <div className="mb-3">
           <label htmlFor="exampleInputPassword1" className="form-label">
@@ -42,6 +43,7 @@ function Register() {
               required: "password is required",
             })}
           />
+          <small className="text-danger">{errors.password?.message}</small>
         </div>
         <button type="submit" className="btn btn-primary">
           Submit

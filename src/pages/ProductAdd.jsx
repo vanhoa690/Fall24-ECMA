@@ -40,9 +40,7 @@ function ProductAdd() {
               required: "Name is required",
             })}
           />
-          {errors?.name && (
-            <small className="text-danger">{errors.name.message}</small>
-          )}
+          <small className="text-danger">{errors.name?.message}</small>
         </div>
         <div className="mb-3">
           <label htmlFor="price" className="form-label">
@@ -60,9 +58,7 @@ function ProductAdd() {
               },
             })}
           />
-          {errors?.price && (
-            <small className="text-danger">{errors.price.message}</small>
-          )}
+          <small className="text-danger">{errors.price?.message}</small>
         </div>
         <button type="submit" className="btn btn-primary">
           Submit
