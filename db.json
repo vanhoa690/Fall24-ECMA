@@ -15,17 +15,5 @@
       "price": "1000",
       "id": 6
     }
-  ],
-  "users": [
-    {
-      "email": "hoadv21@fpt.edu.vn",
-      "password": "$2a$10$YczVr4CVzMMwS/OKSp2equJhIHGmlZ/QEl0kHJmpXXJsQIJbNNOlK",
-      "id": 1
-    },
-    {
-      "email": "hoadv211@fpt.edu.vn",
-      "password": "$2a$10$iPxpTfA3jTt4/UXsmu2xm.FpPgFfEJ8d9J1LgOm0arTTmg3WWNA7C",
-      "id": 2
-    }
   ]
 }
