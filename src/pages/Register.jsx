@@ -10,9 +10,12 @@ function Register() {
   } = useForm();
 
   async function onSubmit(data) {
-    console.log(data);
-    await axios.post("http://localhost:3000/register", data);
-    toast.success("Dang ky thanh cong");
+    try {
+      await axios.post("http://localhost:3000/register", data);
+      toast.success("Dang ky thanh cong");
+    } catch (error) {
+      toast.error("Dang ky that bai");
+    }
   }
   return (
     <div>
@@ -31,6 +34,7 @@ function Register() {
               required: "email is required",
             })}
           />
+          <small className="text-danger">{errors.email?.message}</small>
         </div>
         <div className="mb-3">
           <label htmlFor="exampleInputPassword1" className="form-label">
@@ -44,6 +48,7 @@ function Register() {
               required: "password is required",
             })}
           />
+          <small className="text-danger">{errors.password?.message}</small>
         </div>
         <button type="submit" className="btn btn-primary">
           Submit
