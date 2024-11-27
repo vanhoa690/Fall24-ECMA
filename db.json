@@ -12,13 +12,9 @@
     },
     {
       "name": "Iphone 16",
-      "price": 100,
+      "price": "1000",
       "id": 6
-    },
-    {
-      "name": "ten san pham update",
-      "price": "111",
-      "id": 7
     }
-  ]
+  ],
+  "users": []
 }
