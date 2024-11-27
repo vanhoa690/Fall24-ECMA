@@ -46,6 +46,10 @@ function Register() {
             id="exampleInputPassword1"
             {...register("password", {
               required: "password is required",
+              minLength: {
+                value: 6,
+                message: "Password toi thieu 6 ky tu",
+              },
             })}
           />
           <small className="text-danger">{errors.password?.message}</small>
