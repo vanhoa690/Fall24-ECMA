@@ -13,7 +13,7 @@ function Login() {
     const res = await axios.post("http://localhost:3000/login", data);
     console.log(res.data);
     toast.success("Dang nhap thanh cong");
-    localStorage.set("token", res.data.accessToken);
+    localStorage.setItem("token", res.data.accessToken);
   }
 
   return (
