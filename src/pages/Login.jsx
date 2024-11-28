@@ -11,7 +11,6 @@ function Login() {
 
   async function onSubmit(data) {
     const res = await axios.post("http://localhost:3000/login", data);
-    console.log(res.data);
     toast.success("Dang nhap thanh cong");
     localStorage.setItem("token", res.data.accessToken);
   }

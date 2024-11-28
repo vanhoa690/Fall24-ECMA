@@ -6,7 +6,8 @@ import { useNavigate, useParams } from "react-router-dom";
 
 function ProductEdit() {
   const nav = useNavigate();
-  const params = useParams();
+  // Detructring JS: {id} thay vi dung param.id
+  const { id } = useParams();
   const {
     register,
     handleSubmit,
@@ -16,7 +17,7 @@ function ProductEdit() {
 
   async function onSubmit(data) {
     try {
-      await axios.put(`http://localhost:3000/products/${params.id}`, data);
+      await axios.put(`http://localhost:3000/products/${id}`, data);
 
       toast.success("them thanh cong");
       // chuyen trang list
@@ -32,7 +33,7 @@ function ProductEdit() {
   }
 
   useEffect(() => {
-    getProductDetail(params.id);
+    getProductDetail(id);
   }, []);
 
   return (
