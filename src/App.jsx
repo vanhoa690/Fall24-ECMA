@@ -5,14 +5,9 @@ import ProductList from "./pages/ProductList";
 import Homepage from "./pages/Homepage";
 import { Toaster } from "react-hot-toast";
 import Register from "./pages/Register";
-import Login from "./pages/Login";
 
 function App() {
   const routes = [
-    {
-      path: "login",
-      element: <Login />,
-    },
     {
       path: "register",
       element: <Register />,
