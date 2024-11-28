@@ -1,3 +1,4 @@
+import axios from "axios";
 import { useForm } from "react-hook-form";
 
 function Login() {
@@ -7,8 +8,9 @@ function Login() {
     formState: { errors },
   } = useForm();
 
-  function onSubmit(data) {
+  async function onSubmit(data) {
     console.log(data);
+    await axios.post("http://localhost:3000/login", data);
   }
 
   return (
