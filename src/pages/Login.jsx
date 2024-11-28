@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useForm } from "react-hook-form";
+import toast from "react-hot-toast";
 
 function Login() {
   const {
@@ -9,8 +10,10 @@ function Login() {
   } = useForm();
 
   async function onSubmit(data) {
-    console.log(data);
-    await axios.post("http://localhost:3000/login", data);
+    const res = await axios.post("http://localhost:3000/login", data);
+    console.log(res.data);
+    toast.success("Dang nhap thanh cong");
+    localStorage.set("token", res.data.accessToken);
   }
 
   return (
