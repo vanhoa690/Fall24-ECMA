@@ -5,9 +5,14 @@ import ProductList from "./pages/ProductList";
 import Homepage from "./pages/Homepage";
 import { Toaster } from "react-hot-toast";
 import Register from "./pages/Register";
+import Login from "./pages/Login";
 
 function App() {
   const routes = [
+    {
+      path: "login",
+      element: <Login />,
+    },
     {
       path: "register",
       element: <Register />,
@@ -58,6 +63,11 @@ function App() {
               <li className="nav-item">
                 <a className="nav-link" href="/register">
                   Register
+                </a>
+              </li>
+              <li className="nav-item">
+                <a className="nav-link" href="/login">
+                  Login
                 </a>
               </li>
             </ul>
