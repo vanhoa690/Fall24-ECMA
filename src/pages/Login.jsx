@@ -10,9 +10,10 @@ function Login() {
   } = useForm();
 
   async function onSubmit(data) {
-    console.log(data);
-    await axios.post("http://localhost:3000/login", data);
+    const res = await axios.post("http://localhost:3000/login", data);
     toast.success("Dang nhap thanh cong");
+    console.log(res.data);
+    localStorage.setItem("token", res.data.accessToken);
   }
   return (
     <div>
