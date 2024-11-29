@@ -1,4 +1,6 @@
+import axios from "axios";
 import { useForm } from "react-hook-form";
+import toast from "react-hot-toast";
 
 function Login() {
   const {
@@ -6,8 +8,10 @@ function Login() {
     handleSubmit,
     formState: { errors },
   } = useForm();
-  function onSubmit(data) {
+  async function onSubmit(data) {
     console.log(data);
+    await axios.post("http://localhost:3000/login", data);
+    toast.success("Thanh cong");
   }
   return (
     <div>
