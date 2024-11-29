@@ -6,8 +6,8 @@ function ProductList() {
   const [products, setProducts] = useState([]);
 
   async function getProductList() {
-    const res = await axios.get("http://localhost:3000/products");
-    setProducts(res.data); // detructring res.data giong {data}
+    const { data } = await axios.get("http://localhost:3000/products");
+    setProducts(data); // detructring res.data giong {data}
   }
 
   useEffect(() => {
