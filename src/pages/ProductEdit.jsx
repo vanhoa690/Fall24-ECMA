@@ -5,8 +5,8 @@ import toast from "react-hot-toast";
 import { useNavigate, useParams } from "react-router-dom";
 
 function ProductEdit() {
-  const params = useParams();
-
+  const { id } = useParams();
+  // ap dung detructring params.id giong nhu {id }
   const nav = useNavigate();
   const {
     register,
@@ -32,7 +32,7 @@ function ProductEdit() {
   }
 
   useEffect(() => {
-    getProductDetail(params.id);
+    getProductDetail(id);
   }, []);
 
   return (
