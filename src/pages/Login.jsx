@@ -9,9 +9,9 @@ function Login() {
     formState: { errors },
   } = useForm();
   async function onSubmit(data) {
-    console.log(data);
-    await axios.post("http://localhost:3000/login", data);
+    const res = await axios.post("http://localhost:3000/login", data);
     toast.success("Thanh cong");
+    localStorage.setItem("token", res.data.accessToken);
   }
   return (
     <div>
