@@ -1,36 +1,60 @@
 {
   "products": [
     {
-      "name": "Iphone 16",
-      "price": 100,
+      "name": "Máy tính bảng Samsung Galaxy Tab S7",
+      "image": "https://shopcom.vn/wp-content/uploads/2024/09/dell_xps_17_9710_laptop2_-_tejar_1.jpg",
+      "price": "649",
+      "category": "Dell",
       "id": 4
     },
     {
-      "name": "them san pham",
-      "price": "111",
+      "name": "Smartwatch Fitbit Versa 3",
+      "image": "https://example.com/images/fitbitversa3.jpg",
+      "price": "229",
+      "category": "Hp",
       "id": 5
     },
     {
-      "name": "Iphone 16 update",
-      "price": "1000",
+      "name": "Máy ảnh Canon EOS M50",
+      "image": "https://example.com/images/canonm50.jpg",
+      "price": "649",
+      "category": "Dell",
       "id": 6
+    },
+    {
+      "name": "Máy chiếu Anker Nebula Capsule",
+      "image": "https://example.com/images/ankernebulacapsule.jpg",
+      "price": "359",
+      "category": "Hp",
+      "id": 7
+    },
+    {
+      "name": "Bàn phím cơ Logitech G Pro X",
+      "image": "https://example.com/images/logitechgprox.jpg",
+      "price": "129",
+      "category": "Dell",
+      "id": 8
+    },
+    {
+      "name": "Loa Bluetooth JBL Flip 5",
+      "image": "https://example.com/images/jblflip5.jpg",
+      "price": "119",
+      "category": "Hp",
+      "id": 9
+    },
+    {
+      "name": "Tủ lạnh Samsung RT38K5532S8",
+      "image": "https://example.com/images/samsungfridge.jpg",
+      "price": "499",
+      "category": "Dell",
+      "id": 10
     }
   ],
   "users": [
     {
-      "email": "hoadv21@fpt.edu.vn",
-      "password": "$2a$10$sUq0nRxKuzeNAjt2HaVEcuzgZjK0zLjUb.uXFCDN5hqhabpCU59K.",
+      "email": "thaontpph50562@gmail.com",
+      "password": "$2a$10$rSD0OokVLGkeYx4urzCh4O069OBlePlJ8Mt/SfXQExihSyQlaWG7y",
       "id": 1
-    },
-    {
-      "email": "hoadv212@fpt.edu.vn",
-      "password": "$2a$10$ijnH17MCBabiYcIYCI6d3usALfdFAU0zMJUar1zajah.W/h75f1KK",
-      "id": 2
-    },
-    {
-      "email": "hoadv211@fpt.edu.vn",
-      "password": "$2a$10$/Vj81ahqbpOy18vaEVbY.OR3uizvMeDo9bmrfTxz3GIHpXdkpezJO",
-      "id": 3
     }
   ]
 }
