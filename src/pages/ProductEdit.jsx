@@ -17,7 +17,7 @@ function ProductEdit() {
 
   async function onSubmit(data) {
     try {
-      await axios.put(`http://localhost:3000/products/${params.id}`, data);
+      await axios.put(`http://localhost:3000/products/${id}`, data);
       toast.success("Them thanh cong");
       // chuyen sang product list
       nav("/product/list");
