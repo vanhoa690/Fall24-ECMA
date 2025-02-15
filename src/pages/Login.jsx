@@ -9,9 +9,13 @@ function Login() {
     formState: { errors },
   } = useForm();
   async function onSubmit(data) {
-    const res = await axios.post("http://localhost:3000/login", data);
-    toast.success("Thanh cong");
-    localStorage.setItem("token", res.data.accessToken);
+    try {
+      const res = await axios.post("http://localhost:3000/auth/login", data);
+      toast.success("Thanh cong");
+      localStorage.setItem("token", res.data.token);
+    } catch (error) {
+      toast.error("KO Thanh cong");
+    }
   }
   return (
     <div>

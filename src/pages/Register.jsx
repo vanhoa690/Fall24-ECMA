@@ -1,8 +1,11 @@
 import axios from "axios";
 import { useForm } from "react-hook-form";
 import toast from "react-hot-toast";
+import { useNavigate } from "react-router-dom";
 
 function Register() {
+  const nav = useNavigate();
+
   const {
     register,
     handleSubmit,
@@ -11,8 +14,9 @@ function Register() {
   async function onSubmit(data) {
     console.log(data);
     try {
-      await axios.post("http://localhost:3000/register", data);
+      await axios.post("http://localhost:3000/auth/register", data);
       toast.success("Dang ky thanh cong");
+      nav("/login");
     } catch (error) {
       toast.error("something error");
     }

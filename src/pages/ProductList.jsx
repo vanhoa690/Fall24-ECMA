@@ -5,8 +5,13 @@ import toast from "react-hot-toast";
 function ProductList() {
   const [products, setProducts] = useState([]);
 
+  axios.defaults.baseURL = "http://localhost:3000";
+
   async function getProductList() {
-    const { data } = await axios.get("http://localhost:3000/products");
+    // config axios base URL: http://localhost:3000/api
+    const { data } = await axios.get("/products");
+    console.log(data);
+
     setProducts(data); // detructring res.data giong {data}
   }
 
@@ -17,7 +22,11 @@ function ProductList() {
   async function deleteProduct(id) {
     if (confirm("Di choi ko")) {
       try {
-        await axios.delete(`http://localhost:3000/products/${id}`);
+        await axios.delete(`http://localhost:3000/products/${id}`, {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        });
         toast.success("Xoa thanh cong");
         // cap nhat danh sach
         getProductList();
