@@ -12,7 +12,7 @@ function Login() {
     try {
       const res = await axios.post("http://localhost:3000/auth/login", data);
       toast.success("Thanh cong");
-      localStorage.setItem("token", res.data.token);
+      localStorage.setItem("token", res.data.token); // refeshToken
     } catch (error) {
       toast.error("KO Thanh cong");
     }
